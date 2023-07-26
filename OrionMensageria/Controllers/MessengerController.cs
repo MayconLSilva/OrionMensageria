@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Consumer.Dominio;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using OrionMensageria.Dominio;
@@ -17,15 +18,15 @@ namespace OrionMensageria.Controllers
         private readonly ConnectionFactory _factory;
         public MessengerController()
         {
-            _factory = new ConnectionFactory() 
-            { 
+            _factory = new ConnectionFactory()
+            {
                 HostName = "localhost"
             };
 
         }
 
         [HttpPost("sendMessage")]
-        public async Task<IActionResult> sendMessage(Messages objMsg)
+        public async Task<IActionResult> sendMessage(Notification_Mensageria objMsg)
         {
             using (var connection = _factory.CreateConnection())
 
@@ -54,7 +55,11 @@ namespace OrionMensageria.Controllers
         [HttpGet("readMessage")]
         public async Task<IActionResult> readMessage()
         {
-            var message = (dynamic)null;
+            var notification = (dynamic)null;
+            var _factory = new ConnectionFactory()
+            {
+                HostName = "localhost"
+            };
 
             using (var connection = _factory.CreateConnection())
 
@@ -72,23 +77,37 @@ namespace OrionMensageria.Controllers
                 {
                     var body = eventArgs.Body.ToArray();
                     var contentString = Encoding.UTF8.GetString(body);
-                    System.Diagnostics.Debug.WriteLine("Inicio a leitura");
-                    System.Diagnostics.Debug.WriteLine($"1 Tentativa leitura {contentString}");
+                    //System.Diagnostics.Debug.WriteLine("Inicio a leitura");
 
-                    message = JsonConvert.DeserializeObject<Messages>(contentString);
-                    System.Diagnostics.Debug.WriteLine($"2 Tentativa leitura {message}");
+                    //System.Diagnostics.Debug.WriteLine($"Primeira Opção {contentString}");
+                    Console.WriteLine($"Segunda Opção {contentString}"); //este aqui
+
+                    var message = JsonConvert.DeserializeObject<Notification_Mensageria>(contentString);
+                    notification = new Notification_Mensageria()
+                    {
+                        tipo = message.tipo,
+                        assunto = message.assunto,
+                        cliente = message.cliente,
+                        mensagem = message.mensagem
+                    };
+
+
+                    // message = JsonConvert.DeserializeObject<Messages>(contentString);
+                    //System.Diagnostics.Debug.WriteLine($"Terceira Opção {message}");
+                    // Console.WriteLine($"Quarta Opção {message}");
 
                     // channel.BasicAck(eventArgs.DeliveryTag, false);
                 };
-                System.Diagnostics.Debug.WriteLine("Inicio a leitura");
-                
-                System.Diagnostics.Debug.WriteLine($"2 Tentativa leitura {message}");
+
 
                 channel.BasicConsume(queue: "bemvindo",
                                      autoAck: true,
                                      consumer: consumer);
+
+
+                Console.WriteLine();
+                return Ok(notification);
             }
-            return Ok(message);
         }
     }
 }

@@ -5,7 +5,7 @@ VisualStudioVersion = 17.6.33717.318
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrionMensageria", "OrionMensageria\OrionMensageria.csproj", "{F92EC82F-CCFD-4290-8F67-FA9C0E0C8996}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consumer", "Consumer\Consumer.csproj", "{3FBD6412-DEE4-4E65-AA52-09BCC9FCAD63}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consumer", "Consumer\Consumer.csproj", "{BFA4D32B-6E70-4411-AA92-42DD03D1EF84}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{F92EC82F-CCFD-4290-8F67-FA9C0E0C8996}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F92EC82F-CCFD-4290-8F67-FA9C0E0C8996}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F92EC82F-CCFD-4290-8F67-FA9C0E0C8996}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3FBD6412-DEE4-4E65-AA52-09BCC9FCAD63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3FBD6412-DEE4-4E65-AA52-09BCC9FCAD63}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3FBD6412-DEE4-4E65-AA52-09BCC9FCAD63}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3FBD6412-DEE4-4E65-AA52-09BCC9FCAD63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFA4D32B-6E70-4411-AA92-42DD03D1EF84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFA4D32B-6E70-4411-AA92-42DD03D1EF84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFA4D32B-6E70-4411-AA92-42DD03D1EF84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFA4D32B-6E70-4411-AA92-42DD03D1EF84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
