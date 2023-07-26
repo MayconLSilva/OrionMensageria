@@ -1,5 +1,4 @@
-﻿using Consumer.Dominio;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using OrionMensageria.Dominio;
@@ -65,10 +64,10 @@ namespace OrionMensageria.Controllers
 
             using (var channel = connection.CreateModel())
             {
-                channel.QueueDeclare(queue: "bemvindo",
-                                     durable: false,
-                                     exclusive: false,
-                                     autoDelete: false,
+                channel.QueueDeclare(queue: "bemvindo",//Nome da fila
+                                     durable: false,// Caso true os metadados são armazenados no disco e poderão ser recuperados após o reinício do nó do RabbitMQ. Se true, a fila permanece ativa após reinicio do servidor.
+                                     exclusive: false,//Se sim, apenas uma conexão será permitida a ela, e após esta encerrar, a fila é apagada.
+                                     autoDelete: false,//Se sim, a fila vai ser apagada caso, após um consumer ter se conectado, todos se desconectaram e ela ficar sem conexões ativas.
                                      arguments: null);
 
                 var consumer = new EventingBasicConsumer(channel);
@@ -91,23 +90,26 @@ namespace OrionMensageria.Controllers
                         mensagem = message.mensagem
                     };
 
-
+                    Console.WriteLine();
                     // message = JsonConvert.DeserializeObject<Messages>(contentString);
                     //System.Diagnostics.Debug.WriteLine($"Terceira Opção {message}");
                     // Console.WriteLine($"Quarta Opção {message}");
 
                     // channel.BasicAck(eventArgs.DeliveryTag, false);
                 };
-
+               
 
                 channel.BasicConsume(queue: "bemvindo",
                                      autoAck: true,
                                      consumer: consumer);
 
-
+                
                 Console.WriteLine();
-                return Ok(notification);
+                
             }
+            Console.WriteLine();
+            return Ok(notification);
         }
+
     }
 }
