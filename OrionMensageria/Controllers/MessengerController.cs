@@ -56,11 +56,6 @@ namespace OrionMensageria.Controllers
         {
             var listNotification = new List<Notification_Mensageria>();
 
-            //var _factory = new ConnectionFactory()
-            //{
-            //    HostName = "localhost"
-            //};
-
             using (var connection = _factory.CreateConnection())
 
             using (var channel = connection.CreateModel())
