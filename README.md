@@ -2,7 +2,7 @@
 
 API Para POST e GET de mensagens no RabbitMQ. Foi construida apenas para fins de testes e práticas.
 
-[![GitHub tag](https://img.shields.io/github/tag/gotbahn/browsers-support-badges.svg)](https://github.com/MayconLSilva/OrionMensageria)
+[![Version](https://img.shields.io/badge/Conventional%20Commits-1.0.0-blue.svg)](https://conventionalcommits.org)
 [![Travis](https://img.shields.io/travis/gotbahn/browsers-support-badges.svg)](https://github.com/MayconLSilva/OrionMensageria)
 <a href="https://github.com/MayconLSilva/OrionMensageria">
     <img src="https://img.shields.io/github/issues-pr/FN-FAL113/github-readme-steam-status"/> 
