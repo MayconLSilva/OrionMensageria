@@ -2,7 +2,7 @@
 
 API Para POST e GET de mensagens no RabbitMQ. Foi construida apenas para fins de testes e práticas.
 
-[![Version](https://img.shields.io/badge/Conventional%20Commits-1.0.1-blue.svg)](https://conventionalcommits.org)
+[![Version](https://img.shields.io/badge/Conventional%20Commits-1.0.2-blue.svg)](https://conventionalcommits.org)
 [![Travis](https://img.shields.io/travis/gotbahn/browsers-support-badges.svg)](https://github.com/MayconLSilva/OrionMensageria)
 <a href="https://github.com/MayconLSilva/OrionMensageria">
     <img src="https://img.shields.io/github/issues-pr/FN-FAL113/github-readme-steam-status"/> 
@@ -45,7 +45,10 @@ Certifique-se de ter as seguintes ferramentas e/ou técnologias instaladas em su
 > https://localhost:suaPorta
 ![image](https://github.com/MayconLSilva/OrionMensageria/assets/24304710/72f05881-f6b7-41a2-a0fe-42af296619c8)
 
-6. Você também pode acessar o container do Rabbit e verificar as mensagem por ele, basta:
+6. Ao acessar a URL irá solicitar usuário e senha para entrar.
+> Utilize usuário: MASTER e senha: Dia e Mes atual. EX: 2807
+
+7. Você também pode acessar o container do Rabbit e verificar as mensagem por ele, basta:
 > Utilizar o seguinte endereço: http://localhost:15672
 > Username guest Password guest
 
